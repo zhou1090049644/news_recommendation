@@ -1,0 +1,170 @@
+2026-07-08 23:02:39,949 - data.py[line:26] - INFO: 数据处理，mode: testa_valid
+2026-07-08 23:02:40,646 - data.py[line:153] - DEBUG: df_train_click shape: (1112623, 9), df_test_click shape: (518010, 9)
+2026-07-08 23:03:20,560 - data.py[line:138] - DEBUG: df_query shape: (50000, 2), df_click shape: (1580633, 9)
+2026-07-08 23:03:20,564 - data.py[line:140] - DEBUG:    user_id  click_article_id
+0   200000            194300
+1   200001            175040
+2   200002            207714
+3   200003            159195
+4   200004            331116
+2026-07-08 23:03:20,569 - data.py[line:141] - DEBUG:    user_id  click_article_id  click_timestamp  click_environment  click_deviceGroup  click_os  click_country  click_region  click_referrer_type
+0        0             30760    1508211672520                  4                  1        17              1            25                    2
+1        0            157507    1508211702520                  4                  1        17              1            25                    2
+2        1            289197    1508211316889                  4                  1        17              1            25                    6
+3        1             63746    1508211346889                  4                  1        17              1            25                    6
+4        2             36162    1508211438695                  4                  3        20              1            25                    2
+2026-07-08 23:03:22,701 - recall_itemcf.py[line:38] - INFO: itemcf 召回，mode: testa_valid
+2026-07-08 23:03:22,773 - recall_itemcf.py[line:135] - DEBUG: df_click shape: (1580633, 9)
+2026-07-08 23:03:22,780 - recall_itemcf.py[line:136] - DEBUG:    user_id  click_article_id  click_timestamp  click_environment  click_deviceGroup  click_os  click_country  click_region  click_referrer_type
+0        0             30760    1508211672520                  4                  1        17              1            25                    2
+1        0            157507    1508211702520                  4                  1        17              1            25                    2
+2        1            289197    1508211316889                  4                  1        17              1            25                    6
+3        1             63746    1508211346889                  4                  1        17              1            25                    6
+4        2             36162    1508211438695                  4                  3        20              1            25                    2
+2026-07-08 23:06:24,456 - recall_itemcf.py[line:161] - INFO: 合并任务
+2026-07-08 23:06:31,345 - recall_itemcf.py[line:173] - DEBUG: df_data.head:    user_id  article_id  sim_score  label
+0   200000      237870   0.089262      0
+1   200000       50573   0.064062      0
+2   200000       16132   0.058390      0
+3   200000       63344   0.057656      0
+4   200000      187005   0.045873      0
+2026-07-08 23:06:31,345 - recall_itemcf.py[line:177] - INFO: 计算召回指标
+2026-07-08 23:06:56,482 - recall_itemcf.py[line:184] - DEBUG: itemcf: 0.12606, 0.07145100000000015, 0.17876, 0.07845873015873059, 0.24278, 0.08288266780501899, 0.31736, 0.08547133616135667, 0.3439, 0.08605830397919136
+2026-07-08 23:07:00,244 - recall_binetwork.py[line:38] - INFO: binetwork 召回，mode: testa_valid
+2026-07-08 23:07:00,316 - recall_binetwork.py[line:123] - DEBUG: df_click shape: (1580633, 9)
+2026-07-08 23:07:00,323 - recall_binetwork.py[line:124] - DEBUG:    user_id  click_article_id  click_timestamp  click_environment  click_deviceGroup  click_os  click_country  click_region  click_referrer_type
+0        0             30760    1508211672520                  4                  1        17              1            25                    2
+1        0            157507    1508211702520                  4                  1        17              1            25                    2
+2        1            289197    1508211316889                  4                  1        17              1            25                    6
+3        1             63746    1508211346889                  4                  1        17              1            25                    6
+4        2             36162    1508211438695                  4                  3        20              1            25                    2
+2026-07-08 23:07:47,007 - recall_binetwork.py[line:149] - INFO: 合并任务
+2026-07-08 23:07:50,092 - recall_binetwork.py[line:161] - DEBUG: df_data.head:    user_id  article_id  sim_score  label
+0   200000       16132   0.663758      0
+1   200000      195839   0.508014      0
+2   200000      272143   0.406995      0
+3   200000      206168   0.391164      0
+4   200000      313431   0.391164      0
+2026-07-08 23:07:50,092 - recall_binetwork.py[line:165] - INFO: 计算召回指标
+2026-07-08 23:08:14,948 - recall_binetwork.py[line:172] - DEBUG: binetwork: 0.136, 0.0758876666666672, 0.18752, 0.0826656984126994, 0.24654, 0.08674678367392857, 0.32286, 0.08939303204079588, 0.35136, 0.09002374870324058
+2026-07-08 23:08:17,458 - recall_w2v.py[line:44] - INFO: w2v 召回，mode: testa_valid
+2026-07-08 23:08:17,529 - recall_w2v.py[line:151] - DEBUG: df_click shape: (1580633, 9)
+2026-07-08 23:08:17,535 - recall_w2v.py[line:152] - DEBUG:    user_id  click_article_id  click_timestamp  click_environment  click_deviceGroup  click_os  click_country  click_region  click_referrer_type
+0        0             30760    1508211672520                  4                  1        17              1            25                    2
+1        0            157507    1508211702520                  4                  1        17              1            25                    2
+2        1            289197    1508211316889                  4                  1        17              1            25                    6
+3        1             63746    1508211346889                  4                  1        17              1            25                    6
+4        2             36162    1508211438695                  4                  3        20              1            25                    2
+2026-07-08 23:09:12,403 - recall_w2v.py[line:193] - INFO: 合并任务
+2026-07-08 23:09:15,525 - recall_w2v.py[line:205] - DEBUG: df_data.head:    user_id  article_id  sim_score  label
+0   200000      194197   1.698810      0
+1   200000      293407   1.683457      0
+2   200000        3246   1.680309      0
+3   200000       95722   1.679793      0
+4   200000      211729   1.677929      0
+2026-07-08 23:09:15,525 - recall_w2v.py[line:209] - INFO: 计算召回指标
+2026-07-08 23:09:40,227 - recall_w2v.py[line:216] - DEBUG: w2v: 0.0669, 0.034438666666666576, 0.0982, 0.03865456349206309, 0.12822, 0.04071687523578867, 0.16572, 0.04203408490084247, 0.17504, 0.04224142512400786
+2026-07-08 23:09:41,894 - recall.py[line:41] - INFO: 召回合并: testa_valid
+2026-07-08 23:09:41,961 - recall.py[line:98] - DEBUG: max_threads 64
+2026-07-08 23:10:18,367 - recall.py[line:120] - DEBUG: 召回相似度 itemcf-w2v: 0.2163646020593631
+2026-07-08 23:10:20,751 - recall.py[line:120] - DEBUG: 召回相似度 itemcf-binetwork: 0.29239411583563174
+2026-07-08 23:10:23,179 - recall.py[line:120] - DEBUG: 召回相似度 w2v-itemcf: 0.4301077075098814
+2026-07-08 23:10:24,885 - recall.py[line:120] - DEBUG: 召回相似度 w2v-binetwork: 0.16600247035573124
+2026-07-08 23:10:27,360 - recall.py[line:120] - DEBUG: 召回相似度 binetwork-itemcf: 0.5879767836231882
+2026-07-08 23:10:29,073 - recall.py[line:120] - DEBUG: 召回相似度 binetwork-w2v: 0.16792489513096823
+2026-07-08 23:10:37,616 - recall.py[line:137] - DEBUG: recall_final.shape: (5986916, 4)
+2026-07-08 23:10:37,622 - recall.py[line:138] - DEBUG: recall_final:          user_id  article_id  label  sim_score
+2         200000       16132      0   1.639034
+0         200000      237870      0   1.001000
+1         200000       50573      0   0.704719
+4023524   200000      195839      0   0.694742
+3         200000       63344      0   0.629401
+2026-07-08 23:10:53,034 - recall.py[line:155] - DEBUG: df_useful_recall:          user_id  article_id  label  sim_score
+2         200000       16132      0   1.639034
+0         200000      237870      0   1.001000
+1         200000       50573      0   0.704719
+4023524   200000      195839      0   0.694742
+3         200000       63344      0   0.629401
+2026-07-08 23:11:08,966 - recall.py[line:168] - DEBUG: 召回合并后指标: 0.1411, 0.08132600000000016, 0.19608, 0.08864919841269872, 0.25816, 0.09293785242921798, 0.3306, 0.09548423852655648, 0.35532, 0.09603158956179433
+2026-07-08 23:11:09,009 - recall.py[line:174] - DEBUG: 平均每个用户召回数量：147.04523769668563
+2026-07-08 23:11:09,133 - recall.py[line:176] - DEBUG: 标签分布: 0    3489897
+1      23896
+Name: label, dtype: int64
+2026-07-08 23:11:11,761 - rank_feature.py[line:34] - INFO: 排序特征，mode: testa_valid
+2026-07-08 23:11:11,899 - rank_feature.py[line:127] - DEBUG: df_feature.shape: (3513793, 4)
+2026-07-08 23:11:12,539 - rank_feature.py[line:136] - DEBUG: df_article.head():    article_id  category_id  created_at_ts  words_count
+0           0            0     1513144419          168
+1           1            1     1405341936          189
+2           2            1     1408667706          250
+3           3            1     1408468313          230
+4           4            1     1407071171          162
+2026-07-08 23:11:12,539 - rank_feature.py[line:137] - DEBUG: df_feature.shape: (3513793, 8)
+2026-07-08 23:11:12,539 - rank_feature.py[line:138] - DEBUG: df_feature.columns: ['user_id', 'article_id', 'label', 'sim_score', 'category_id', 'created_at_ts', 'words_count', 'created_at_datetime']
+2026-07-08 23:11:48,722 - rank_feature.py[line:162] - DEBUG: df_feature.shape: (3513793, 9)
+2026-07-08 23:11:48,722 - rank_feature.py[line:163] - DEBUG: df_feature.columns: ['user_id', 'article_id', 'label', 'sim_score', 'category_id', 'created_at_ts', 'words_count', 'created_at_datetime', 'user_id_click_article_created_at_ts_diff_mean']
+2026-07-08 23:12:16,134 - rank_feature.py[line:173] - DEBUG: df_feature.shape: (3513793, 10)
+2026-07-08 23:12:16,134 - rank_feature.py[line:174] - DEBUG: df_feature.columns: ['user_id', 'article_id', 'label', 'sim_score', 'category_id', 'created_at_ts', 'words_count', 'created_at_datetime', 'user_id_click_article_created_at_ts_diff_mean', 'user_id_click_diff_mean']
+2026-07-08 23:12:16,544 - rank_feature.py[line:189] - DEBUG: df_feature.shape: (3513793, 12)
+2026-07-08 23:12:16,544 - rank_feature.py[line:190] - DEBUG: df_feature.columns: ['user_id', 'article_id', 'label', 'sim_score', 'category_id', 'created_at_ts', 'words_count', 'created_at_datetime', 'user_id_click_article_created_at_ts_diff_mean', 'user_id_click_diff_mean', 'user_click_timestamp_created_at_ts_diff_mean', 'user_click_timestamp_created_at_ts_diff_std']
+2026-07-08 23:12:16,985 - rank_feature.py[line:199] - DEBUG: df_feature.shape: (3513793, 13)
+2026-07-08 23:12:16,985 - rank_feature.py[line:200] - DEBUG: df_feature.columns: ['user_id', 'article_id', 'label', 'sim_score', 'category_id', 'created_at_ts', 'words_count', 'created_at_datetime', 'user_id_click_article_created_at_ts_diff_mean', 'user_id_click_diff_mean', 'user_click_timestamp_created_at_ts_diff_mean', 'user_click_timestamp_created_at_ts_diff_std', 'user_click_datetime_hour_std']
+2026-07-08 23:12:19,061 - rank_feature.py[line:211] - DEBUG: df_feature.shape: (3513793, 15)
+2026-07-08 23:12:19,061 - rank_feature.py[line:212] - DEBUG: df_feature.columns: ['user_id', 'article_id', 'label', 'sim_score', 'category_id', 'created_at_ts', 'words_count', 'created_at_datetime', 'user_id_click_article_created_at_ts_diff_mean', 'user_id_click_diff_mean', 'user_click_timestamp_created_at_ts_diff_mean', 'user_click_timestamp_created_at_ts_diff_std', 'user_click_datetime_hour_std', 'user_clicked_article_words_count_mean', 'user_click_last_article_words_count']
+2026-07-08 23:12:21,184 - rank_feature.py[line:223] - DEBUG: df_feature.shape: (3513793, 17)
+2026-07-08 23:12:21,185 - rank_feature.py[line:224] - DEBUG: df_feature.columns: ['user_id', 'article_id', 'label', 'sim_score', 'category_id', 'created_at_ts', 'words_count', 'created_at_datetime', 'user_id_click_article_created_at_ts_diff_mean', 'user_id_click_diff_mean', 'user_click_timestamp_created_at_ts_diff_mean', 'user_click_timestamp_created_at_ts_diff_std', 'user_click_datetime_hour_std', 'user_clicked_article_words_count_mean', 'user_click_last_article_words_count', 'user_click_last_article_created_time', 'user_clicked_article_created_time_max']
+2026-07-08 23:12:23,262 - rank_feature.py[line:235] - DEBUG: df_feature.shape: (3513793, 19)
+2026-07-08 23:12:23,262 - rank_feature.py[line:236] - DEBUG: df_feature.columns: ['user_id', 'article_id', 'label', 'sim_score', 'category_id', 'created_at_ts', 'words_count', 'created_at_datetime', 'user_id_click_article_created_at_ts_diff_mean', 'user_id_click_diff_mean', 'user_click_timestamp_created_at_ts_diff_mean', 'user_click_timestamp_created_at_ts_diff_std', 'user_click_datetime_hour_std', 'user_clicked_article_words_count_mean', 'user_click_last_article_words_count', 'user_click_last_article_created_time', 'user_clicked_article_created_time_max', 'user_click_last_article_click_time', 'user_clicked_article_click_time_mean']
+2026-07-08 23:12:23,300 - rank_feature.py[line:245] - DEBUG: df_feature.shape: (3513793, 22)
+2026-07-08 23:12:23,300 - rank_feature.py[line:246] - DEBUG: df_feature.columns: ['user_id', 'article_id', 'label', 'sim_score', 'category_id', 'created_at_ts', 'words_count', 'created_at_datetime', 'user_id_click_article_created_at_ts_diff_mean', 'user_id_click_diff_mean', 'user_click_timestamp_created_at_ts_diff_mean', 'user_click_timestamp_created_at_ts_diff_std', 'user_click_datetime_hour_std', 'user_clicked_article_words_count_mean', 'user_click_last_article_words_count', 'user_click_last_article_created_time', 'user_clicked_article_created_time_max', 'user_click_last_article_click_time', 'user_clicked_article_click_time_mean', 'user_last_click_created_at_ts_diff', 'user_last_click_timestamp_diff', 'user_last_click_words_count_diff']
+2026-07-08 23:12:25,771 - rank_feature.py[line:255] - DEBUG: df_feature.shape: (3513793, 25)
+2026-07-08 23:12:25,772 - rank_feature.py[line:256] - DEBUG: df_feature.columns: ['user_id', 'article_id', 'label', 'sim_score', 'category_id', 'created_at_ts', 'words_count', 'created_at_datetime', 'user_id_click_article_created_at_ts_diff_mean', 'user_id_click_diff_mean', 'user_click_timestamp_created_at_ts_diff_mean', 'user_click_timestamp_created_at_ts_diff_std', 'user_click_datetime_hour_std', 'user_clicked_article_words_count_mean', 'user_click_last_article_words_count', 'user_click_last_article_created_time', 'user_clicked_article_created_time_max', 'user_click_last_article_click_time', 'user_clicked_article_click_time_mean', 'user_last_click_created_at_ts_diff', 'user_last_click_timestamp_diff', 'user_last_click_words_count_diff', 'user_id_cnt', 'article_id_cnt', 'user_id_category_id_cnt']
+2026-07-08 23:14:39,917 - rank_feature.py[line:276] - DEBUG: df_feature.shape: (3513793, 27)
+2026-07-08 23:14:39,918 - rank_feature.py[line:277] - DEBUG: df_feature.columns: ['user_id', 'article_id', 'label', 'sim_score', 'category_id', 'created_at_ts', 'words_count', 'created_at_datetime', 'user_id_click_article_created_at_ts_diff_mean', 'user_id_click_diff_mean', 'user_click_timestamp_created_at_ts_diff_mean', 'user_click_timestamp_created_at_ts_diff_std', 'user_click_datetime_hour_std', 'user_clicked_article_words_count_mean', 'user_click_last_article_words_count', 'user_click_last_article_created_time', 'user_clicked_article_created_time_max', 'user_click_last_article_click_time', 'user_clicked_article_click_time_mean', 'user_last_click_created_at_ts_diff', 'user_last_click_timestamp_diff', 'user_last_click_words_count_diff', 'user_id_cnt', 'article_id_cnt', 'user_id_category_id_cnt', 'user_clicked_article_itemcf_sim_sum', 'user_last_click_article_itemcf_sim']
+2026-07-08 23:15:25,462 - rank_feature.py[line:288] - DEBUG: df_feature.shape: (3513793, 28)
+2026-07-08 23:15:25,462 - rank_feature.py[line:289] - DEBUG: df_feature.columns: ['user_id', 'article_id', 'label', 'sim_score', 'category_id', 'created_at_ts', 'words_count', 'created_at_datetime', 'user_id_click_article_created_at_ts_diff_mean', 'user_id_click_diff_mean', 'user_click_timestamp_created_at_ts_diff_mean', 'user_click_timestamp_created_at_ts_diff_std', 'user_click_datetime_hour_std', 'user_clicked_article_words_count_mean', 'user_click_last_article_words_count', 'user_click_last_article_created_time', 'user_clicked_article_created_time_max', 'user_click_last_article_click_time', 'user_clicked_article_click_time_mean', 'user_last_click_created_at_ts_diff', 'user_last_click_timestamp_diff', 'user_last_click_words_count_diff', 'user_id_cnt', 'article_id_cnt', 'user_id_category_id_cnt', 'user_clicked_article_itemcf_sim_sum', 'user_last_click_article_itemcf_sim', 'user_last_click_article_binetwork_sim']
+2026-07-08 23:19:35,003 - rank_feature.py[line:303] - DEBUG: df_feature.shape: (3513793, 30)
+2026-07-08 23:19:35,003 - rank_feature.py[line:304] - DEBUG: df_feature.columns: ['user_id', 'article_id', 'label', 'sim_score', 'category_id', 'created_at_ts', 'words_count', 'created_at_datetime', 'user_id_click_article_created_at_ts_diff_mean', 'user_id_click_diff_mean', 'user_click_timestamp_created_at_ts_diff_mean', 'user_click_timestamp_created_at_ts_diff_std', 'user_click_datetime_hour_std', 'user_clicked_article_words_count_mean', 'user_click_last_article_words_count', 'user_click_last_article_created_time', 'user_clicked_article_created_time_max', 'user_click_last_article_click_time', 'user_clicked_article_click_time_mean', 'user_last_click_created_at_ts_diff', 'user_last_click_timestamp_diff', 'user_last_click_words_count_diff', 'user_id_cnt', 'article_id_cnt', 'user_id_category_id_cnt', 'user_clicked_article_itemcf_sim_sum', 'user_last_click_article_itemcf_sim', 'user_last_click_article_binetwork_sim', 'user_last_click_article_w2v_sim', 'user_click_article_w2w_sim_sum_2']
+2026-07-08 23:19:46,533 - rank_lgb.py[line:34] - INFO: lightgbm 排序，mode: testa_valid
+2026-07-08 23:19:49,621 - rank_lgb.py[line:79] - DEBUG: 
+Fold_1 Training ================================
+
+2026-07-09 11:48:39,847 - rank_lgb.py[line:122] - DEBUG: importance:                                      feature_name     importance
+0                                       sim_score  211799.611091
+1                  user_last_click_timestamp_diff   91621.784608
+2              user_last_click_created_at_ts_diff   60491.503962
+3                                  article_id_cnt   59412.434269
+4             user_clicked_article_itemcf_sim_sum   55275.802195
+5                         user_id_click_diff_mean   39690.072912
+6              user_last_click_article_itemcf_sim   38751.624495
+7                user_click_article_w2w_sim_sum_2   29491.780843
+8                                   created_at_ts   24871.075287
+9           user_last_click_article_binetwork_sim   20062.255945
+10                user_last_click_article_w2v_sim   20010.080609
+11           user_clicked_article_click_time_mean   14074.366901
+12                        user_id_category_id_cnt   13459.086502
+13                                        user_id   13266.046151
+14    user_click_timestamp_created_at_ts_diff_std   13237.521446
+15   user_click_timestamp_created_at_ts_diff_mean   12957.812807
+16                   user_click_datetime_hour_std   12835.935141
+17                                     article_id   12289.408308
+18                                    user_id_cnt   11918.594191
+19  user_id_click_article_created_at_ts_diff_mean   11688.413407
+20          user_clicked_article_words_count_mean   11467.974305
+21               user_last_click_words_count_diff   11278.844855
+22                                    words_count    9874.294422
+23            user_click_last_article_words_count    8714.616647
+24             user_click_last_article_click_time    8440.781407
+25          user_clicked_article_created_time_max    7663.119951
+26           user_click_last_article_created_time    7117.674955
+27                                    category_id    3169.766188
+
+2026-07-09 11:48:42,936 - rank_lgb.py[line:129] - DEBUG: df_oof.head:      user_id  article_id  label      pred
+5     200000      272143      0  0.098115
+23    200000      336221      0  0.041681
+176   200000       70591      0  0.035144
+177   200000      111043      0  0.029660
+182   200000       65991      0  0.029116
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 23896/23896 [00:13<00:00, 1728.78it/s]
+2026-07-09 11:48:57,296 - rank_lgb.py[line:135] - DEBUG: 0.18348, 0.1045803333333304, 0.26292, 0.1151206269841258, 0.3484, 0.1210362720316284, 0.42716, 0.12384733957160417, 0.44684, 0.12428487293380804
+2026-07-09 11:48:57,296 - rank_lgb.py[line:146] - INFO: df_test is empty, skip submission prediction
+
