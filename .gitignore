@@ -1,0 +1,11 @@
+.vscode/
+.idea/
+*/__pycache__/
+*.pyc
+
+tcdata/
+prediction_result/
+
+user_data/*
+!user_data/log/
+!user_data/log/*.log
