@@ -38,7 +38,9 @@ def func_if_sum(x):
     user_id = x['user_id']
     article_id = x['article_id']
 
-    interacted_items = user_item_dict[user_id]
+    interacted_items = user_item_dict.get(user_id, [])
+    if not interacted_items:
+        return 0
     interacted_items = interacted_items[::-1]
 
     sim_sum = 0
@@ -54,7 +56,10 @@ def func_if_last(x):
     user_id = x['user_id']
     article_id = x['article_id']
 
-    last_item = user_item_dict[user_id][-1]
+    interacted_items = user_item_dict.get(user_id, [])
+    if not interacted_items:
+        return 0
+    last_item = interacted_items[-1]
 
     sim = 0
     try:
@@ -68,7 +73,10 @@ def func_binetwork_sim_last(x):
     user_id = x['user_id']
     article_id = x['article_id']
 
-    last_item = user_item_dict[user_id][-1]
+    interacted_items = user_item_dict.get(user_id, [])
+    if not interacted_items:
+        return 0
+    last_item = interacted_items[-1]
 
     sim = 0
     try:
@@ -90,7 +98,9 @@ def func_w2w_sum(x, num):
     user_id = x['user_id']
     article_id = x['article_id']
 
-    interacted_items = user_item_dict[user_id]
+    interacted_items = user_item_dict.get(user_id, [])
+    if not interacted_items:
+        return 0
     interacted_items = interacted_items[::-1][:num]
 
     sim_sum = 0
@@ -107,7 +117,10 @@ def func_w2w_last_sim(x):
     user_id = x['user_id']
     article_id = x['article_id']
 
-    last_item = user_item_dict[user_id][-1]
+    interacted_items = user_item_dict.get(user_id, [])
+    if not interacted_items:
+        return 0
+    last_item = interacted_items[-1]
 
     sim = 0
     try:

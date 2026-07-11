@@ -1,22 +1,25 @@
 #time=$(date "+%Y-%m-%d-%H:%M:%S")
 time=$(date "+%Y-%m-%d-%H-%M-%S")
-#处理数据
+# process data
 #python data.py --mode valid --logfile "${time}.log"
 
-# itemcf 召回
+# itemcf recall
 python recall_itemcf.py --mode valid --logfile "${time}.log"
 
-# binetwork 召回
+# binetwork recall
 python recall_binetwork.py --mode valid --logfile "${time}.log"
 
-# w2v 召回
+# w2v recall
 python recall_w2v.py --mode valid --logfile "${time}.log"
 
-# 召回合并
+# hot recall
+python recall_hot.py --mode valid --logfile "${time}.log"
+
+# merge recall
 python recall.py --mode valid --logfile "${time}.log"
 
-# 排序特征
+# rank feature
 python rank_feature.py --mode valid --logfile "${time}.log"
 
-# lgb 模型训练
+# lgb train
 python rank_lgb.py --mode valid --logfile "${time}.log"

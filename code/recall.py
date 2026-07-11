@@ -53,9 +53,12 @@ def mms(df):
 
     ans = []
     for user_id, sim_score in tqdm(df[['user_id', 'sim_score']].values):
-        ans.append((sim_score - user_score_min[user_id]) /
-                   (user_score_max[user_id] - user_score_min[user_id]) +
-                   10**-3)
+        score_range = user_score_max[user_id] - user_score_min[user_id]
+        if score_range == 0:
+            ans.append(1.0)
+        else:
+            ans.append((sim_score - user_score_min[user_id]) / score_range +
+                       10**-3)
     return ans
 
 
@@ -98,9 +101,13 @@ if __name__ == '__main__':
 
     log.debug(f'max_threads {max_threads}')
 
-    recall_methods = ['itemcf', 'w2v', 'binetwork']
+    recall_methods = ['itemcf', 'w2v', 'binetwork', 'hot']
 
-    weights = {'itemcf': 1, 'binetwork': 1, 'w2v': 0.1}
+    weights = {'itemcf': 1, 'binetwork': 1, 'w2v': 0.1, 'hot': 0.1}
+    hot_feature_cols = [
+        'global_hot_score', 'category_hot_score', 'time_hot_score',
+        'context_hot_score', 'hot_recall_source_count'
+    ]
     recall_list = []
     recall_dict = {}
     for recall_method in recall_methods:
@@ -127,9 +134,31 @@ if __name__ == '__main__':
                                      'user_id', 'article_id'
                                  ])['sim_score'].sum().reset_index()
 
-    recall_final = recall_final[['user_id', 'article_id', 'label'
-                                 ]].drop_duplicates(['user_id', 'article_id'])
+    recall_label = recall_final[['user_id', 'article_id',
+                                 'label']].groupby([
+                                     'user_id', 'article_id'
+                                 ])['label'].max().reset_index()
+
+    available_hot_feature_cols = [
+        col for col in hot_feature_cols if col in recall_final.columns
+    ]
+    if available_hot_feature_cols:
+        recall_hot_feature = recall_final[['user_id', 'article_id'] +
+                                          available_hot_feature_cols].copy()
+        recall_hot_feature[available_hot_feature_cols] = recall_hot_feature[
+            available_hot_feature_cols].fillna(0)
+        recall_hot_feature = recall_hot_feature.groupby(
+            ['user_id', 'article_id'])[available_hot_feature_cols].sum(
+            ).reset_index()
+    else:
+        recall_hot_feature = None
+
+    recall_final = recall_label
     recall_final = recall_final.merge(recall_score, how='left')
+    if recall_hot_feature is not None:
+        recall_final = recall_final.merge(recall_hot_feature, how='left')
+        recall_final[available_hot_feature_cols] = recall_final[
+            available_hot_feature_cols].fillna(0)
 
     recall_final.sort_values(['user_id', 'sim_score'],
                              inplace=True,
